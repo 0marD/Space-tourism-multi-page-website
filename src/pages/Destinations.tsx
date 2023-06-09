@@ -48,7 +48,7 @@ const Destinations = (): JSX.Element => {
                     >
                         <img
                             className="card__image"
-                            src={dest.images.webp}
+                            src={`${dest.images.webp}`}
                             alt={`${dest.name} image`}
                         />
                         <div className="card__content">

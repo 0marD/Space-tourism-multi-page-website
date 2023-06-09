@@ -4,7 +4,9 @@
         font-size: 14px;
     }
 }
-
+html{
+    background-color: var(--color-primary);
+}
 * {
     margin: 0;
     padding: 0;
