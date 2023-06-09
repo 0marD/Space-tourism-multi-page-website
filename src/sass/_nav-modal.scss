@@ -1,0 +1,68 @@
+.nav-modal {
+    position: fixed;
+    inset: 0;
+    left: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40.7742px);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8.6vw;
+    padding-top: 31.5vw;
+    padding-left: 8.6vw;
+    overflow: hidden;
+    transition: left .3s;
+
+    &.active {
+        transition: left .3s;
+        left: 32vw;
+    }
+
+    &__link {
+        @include font-secundary;
+        width: 100%;
+        display: flex;
+        gap: 3.8vw;
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        letter-spacing: .1688rem;
+        font-weight: 400;
+        position: relative;
+        text-transform: uppercase;
+
+        &-number {
+            font-weight: 700;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: var(--color-thirdy);
+            top: 50%;
+            bottom: 50%;
+            width: 0;
+            right: 0;
+            transition: top, bottom, width, .3s;
+        }
+
+        &:hover::after {
+            transition: top, bottom, width, .3s;
+            width: .25rem;
+            top: -0.375rem;
+            bottom: -0.375rem;
+            opacity: .5;
+        }
+
+        &.active::after {
+            transition: top, bottom, width, .3s;
+            width: .25rem;
+            top: -0.375rem;
+            bottom: -0.375rem;
+            opacity: 1;
+        }
+    }
+
+    @media screen and (width>=768px) {
+        display: none;
+    }
+}

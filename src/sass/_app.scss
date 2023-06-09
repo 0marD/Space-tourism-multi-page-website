@@ -1,0 +1,6 @@
+.app {
+    @include colors;
+    position: relative;
+    color: var(--color-thirdy);
+    @include font-body;
+}

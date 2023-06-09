@@ -1,0 +1,103 @@
+.nav {
+    width: max-content;
+    display: none;
+    padding: 0 3rem;
+    align-items: center;
+    gap: 2.625rem;
+    background-color: hsla(0, 0%, 100%, 0.04);
+    backdrop-filter: blur(40px);
+
+    &__line {
+        display: none;
+    }
+
+    &__link {
+        @include nav-text;
+        font-size: .875rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .7813rem;
+        padding: 2.5rem .0625rem;
+        position: relative;
+
+        &-number {
+            display: none;
+            font-weight: 700;
+        }
+
+        &.active {
+
+            &::after {
+                position: absolute;
+                background-color: var(--color-thirdy);
+                height: .1875rem;
+                right: 0;
+                left: 0;
+                transition: left, right, height, .3s;
+            }
+
+        }
+
+        &::after {
+            content: "";
+            background-color: var(--color-thirdy);
+            position: absolute;
+            right: 100%;
+            left: 100%;
+            bottom: 0;
+            transition: left, right, height, .3s;
+        }
+
+        &:hover::after {
+            height: .1875rem;
+            right: 0;
+            left: 0;
+            transition: left, right, height, .3s;
+            opacity: .5;
+        }
+    }
+
+    @media screen and (width >=768px) {
+        display: flex;
+        min-width: 58%;
+    }
+
+    @media screen and (width >=1024px) {
+        display: flex;
+        min-width: 60%;
+        padding-left: 8.54vw;
+        gap: 3rem;
+
+        &__line {
+            display: block;
+            position: absolute;
+            height: 1px;
+            background-color: var(--color-thirdy);
+            opacity: .25;
+            width: 21vw;
+            bottom: 50%;
+            right: 95%;
+        }
+
+        &__link {
+            font-size: 1rem;
+
+            &-number {
+                display: inline;
+            }
+        }
+    }
+
+    @media screen and (width >=1440px) {
+
+        &__line {
+
+            width: 33vw;
+
+        }
+
+    }
+
+
+}

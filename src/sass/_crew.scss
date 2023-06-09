@@ -1,0 +1,313 @@
+.crew {
+    @include route;
+
+    padding-top: 5.5rem;
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.125rem;
+        @include font-secundary;
+        text-transform: uppercase;
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        letter-spacing: .1688rem;
+        padding-bottom: 2rem;
+
+    }
+
+    &__step {
+        opacity: .25;
+    }
+
+    &__carousel {
+        position: relative;
+        height: auto;
+        min-height: 80vh;
+        overflow: hidden;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        overflow: hidden;
+        position: absolute;
+        top: 3.1875rem;
+        opacity: 0;
+        transition: opacity 1s;
+        width: 100%;
+        z-index: -1;
+
+        &--active {
+            transition: opacity 1s;
+            opacity: 1;
+            z-index: 0;
+        }
+    }
+
+    &__figure {
+        width: 100%;
+        display: flex;
+        aspect-ratio: 1/.68;
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--color-fourty);
+            height: 1px;
+        }
+    }
+
+    &__image {
+        margin: auto;
+    }
+
+    &__dots {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        padding-bottom: 2rem;
+    }
+
+    &__dot {
+        background-color: var(--color-thirdy);
+        aspect-ratio: 1/1;
+        width: .625rem;
+        border-radius: 50%;
+        opacity: .17;
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: .5;
+            cursor: pointer;
+        }
+
+        &--active {
+            transition: opacity .3s;
+            opacity: 1;
+        }
+    }
+
+    &__dots--tablet {
+        display: none
+    }
+
+    &__role {
+        @include font-primary;
+        font-size: 1rem;
+        line-height: 1.125rem;
+        text-transform: uppercase;
+        opacity: .5;
+        mix-blend-mode: normal;
+        margin-bottom: .5rem
+    }
+
+    &__name {
+        @include font-primary;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    &__bio {
+        font-size: .9375rem;
+        line-height: 1.5625rem;
+        text-align: center;
+        color: var(--color-secundary);
+    }
+
+    @media screen and (width >=768px) {
+        padding-top: 8.5rem;
+        padding-left: 2.4063rem;
+        padding-right: 2.4063rem;
+
+        &__heading {
+            justify-content: left;
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+            letter-spacing: .2109rem;
+            padding-bottom: 3.75rem;
+        }
+
+        &__carousel {
+            position: relative;
+            height: auto;
+            min-height: 100vh;
+            // overflow: hidden;
+            overflow: visible;
+
+        }
+
+        &__card {
+            flex-direction: column-reverse;
+            gap: 2.5rem;
+            top: 5.25rem;
+            overflow: visible;
+
+        }
+
+        &__figure {
+            height: 33.25rem;
+        }
+
+        &__content {
+            max-width: 37rem;
+            margin: 0 auto;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__role {
+            font-size: 1.5rem;
+            line-height: 1.75rem;
+        }
+
+        &__name {
+            font-size: 2.5rem;
+            line-height: 2.875rem;
+            padding-bottom: 0;
+        }
+
+        &__bio {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            padding-bottom: 2.5rem;
+        }
+
+        &__dot--tablet {
+            background-color: var(--color-thirdy);
+            aspect-ratio: 1/1;
+            width: .625rem;
+            border-radius: 50%;
+            opacity: .17;
+            transition: opacity .3s;
+
+            &:hover {
+                opacity: .5;
+                cursor: pointer;
+            }
+
+            &--active {
+                transition: opacity .3s;
+                opacity: 1;
+            }
+        }
+
+        &__dots--tablet {
+            width: 100%;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        &__dots {
+            display: none;
+        }
+    }
+
+    @media screen and (width >=1024px) {
+        padding-top: 14.7vw;
+        padding-left: 11.5vw;
+        padding-right: 11.5vw;
+
+
+        &__heading {
+            padding-bottom: 0;
+            font-size: 1.75rem;
+            line-height: 2.125rem;
+            letter-spacing: .2953rem;
+        }
+
+        &__carousel {
+            min-height: 45vw;
+        }
+
+        &__card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            place-content: center;
+            place-items: center;
+            width: 79vw;
+            text-align: left;
+            height: 28.2vw;
+        }
+
+        &__figure {
+            grid-area: 1/2;
+            height: 28.2vw;
+            overflow: visible;
+            position: relative;
+
+            &::after {
+                bottom: -13.9vw;
+
+            }
+        }
+
+        &__image {
+            height: 150%;
+            max-height: unset;
+            bottom: -13.9vw;
+            position: absolute;
+            right: 0;
+        }
+
+        &__content {
+            padding-top: 10.69vw;
+        }
+
+        &__role {
+            font-size: 2rem;
+            line-height: 2.3125rem;
+            margin-bottom: 1.04vw;
+        }
+
+        &__name {
+            font-size: 3.5rem;
+            line-height: 4rem;
+            text-align: left;
+            margin-bottom: 1.9vw;
+            width: max-content;
+        }
+
+        &__bio {
+            font-size: 1.125rem;
+            line-height: 2rem;
+            text-align: left;
+            margin-bottom: 6.1vw;
+            padding-bottom: 0;
+            width: 30.84vw;
+        }
+
+        &__dots--tablet {
+            justify-content: left;
+            gap: 1.75rem;
+        }
+
+        &__dot--tablet {
+            height: 1.04vw;
+            width: 1.04vw;
+        }
+
+    }
+
+    @media screen and (width >=1440px) {
+
+        &__image {
+            height: 168%;
+        }
+
+
+    }
+}

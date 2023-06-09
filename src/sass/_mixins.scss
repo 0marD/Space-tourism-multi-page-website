@@ -1,0 +1,134 @@
+@mixin route {
+    padding: 7rem 1.5rem;
+    padding-bottom: 9.625rem;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin colors {
+    --color-primary: hsl(230, 35%, 7%);
+    --color-secundary: hsl(231, 77%, 90%);
+    --color-thirdy: hsl(0, 0%, 100%);
+    --color-fourty: hsla(231, 15%, 26%, 1);
+}
+
+@mixin font-body {
+    font-family: "Barlow", sans-serif;
+}
+
+@mixin font-secundary {
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+@mixin font-primary {
+    font-family: "Bellefair", serif;
+}
+
+@mixin heading-main {
+    @include font-primary;
+    font-size: 9.375rem;
+    text-transform: uppercase;
+}
+
+@mixin heading-secundary {
+    @include font-primary;
+    font-size: 6.25rem;
+    text-transform: uppercase;
+}
+
+@mixin heading-thirdy {
+    @include font-primary;
+    font-size: 3.625rem;
+    text-transform: uppercase;
+}
+
+@mixin heading-fourty {
+    @include font-primary;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+@mixin heading-fifty {
+    @include font-secundary;
+    font-size: 1.75rem;
+    letter-spacing: 0.2953rem;
+    text-transform: uppercase;
+    color: var(--color-secundary);
+}
+
+@mixin subheading-main {
+    @include font-primary;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+}
+
+@mixin subheading-secundary {
+    @include font-secundary;
+    font-size: 0.875rem;
+    letter-spacing: 0.1469rem;
+    text-transform: uppercase;
+}
+
+@mixin nav-text {
+    @include font-secundary;
+    font-size: 1rem;
+    letter-spacing: 0.1688rem;
+    text-transform: uppercase;
+}
+
+@mixin menu-burger {
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    transition: transform, opcity, 0.3s;
+
+    &:hover {
+        cursor: pointer;
+
+        & .line {
+            transition: opacity 0.3s;
+            opacity: 0.8;
+        }
+    }
+
+    &:active {
+        transform: scale(0.8);
+    }
+
+    .line {
+        background-color: var(--color-secundary);
+        width: inherit;
+        height: 0.1875rem;
+        border-radius: 1rem;
+        transition: transform 0.3s;
+
+        &.active {
+            position: absolute;
+            inset: unset;
+            transition: transform 0.3s;
+        }
+
+        &:first-child.active {
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(2).active {
+            transform: rotate(-135deg);
+            opacity: 0;
+        }
+
+        &:last-child.active {
+            transform: rotate(-45deg);
+        }
+    }
+
+    @media screen and (width >=768px) {
+        display: none;
+    }
+}

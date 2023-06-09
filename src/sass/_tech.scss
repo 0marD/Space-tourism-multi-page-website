@@ -1,0 +1,265 @@
+.tech {
+    @include route;
+    padding: 0;
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.125rem;
+        @include font-secundary;
+        text-transform: uppercase;
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        letter-spacing: 0.1688rem;
+        padding-bottom: 2rem;
+    }
+
+    &__step {
+        opacity: 0.25;
+        font-weight: 700;
+    }
+
+    &__carousel {
+        width: 100%;
+        position: relative;
+        height: 150vw;
+    }
+
+    .card {
+        position: absolute;
+        top: 0;
+        display: grid;
+        width: 100%;
+        place-content: center;
+        place-items: center;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity, z-index, 0.3s;
+
+        &--active {
+            transition: opacity, z-index, 0.3s;
+            z-index: 0;
+            opacity: 1;
+        }
+
+        &__figure {
+            width: 100%;
+            height: 12rem;
+        }
+
+        &__image {
+            width: 100%;
+            height: 100%;
+            object-position: bottom;
+            max-width: unset;
+            max-height: unset;
+        }
+
+        &__content {
+            padding: 2.125rem 1.5rem;
+            text-align: center;
+        }
+
+        &__nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+
+            &-item {
+                height: 2.5rem;
+                aspect-ratio: 1/1;
+                border: 1px solid var(--color-fourty);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1.125rem;
+                text-align: center;
+                letter-spacing: 0.0625rem;
+                @include font-primary;
+                color: var(--color-thirdy);
+                transition: background-color, color, 0.3s;
+
+                &:hover {
+                    border: 1px solid var(--color-thirdy);
+                    cursor: pointer;
+                }
+
+                &--active {
+                    transition: background-color, color, 0.3s;
+                    background-color: var(--color-thirdy);
+                    color: var(--color-primary);
+                    border: 1px solid var(--color-thirdy);
+                }
+            }
+        }
+
+        &__heading {
+            text-transform: uppercase;
+        }
+
+        &__title {
+            line-height: 1.0625rem;
+            letter-spacing: 0.1477rem;
+            color: var(--color-secundary);
+            @include font-secundary;
+            font-size: 0.875rem;
+            padding-bottom: 0.5625rem;
+        }
+
+        &__name {
+            @include font-primary;
+            font-size: 1.5rem;
+            line-height: 1.75rem;
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+
+        &__description {
+            @include font-body;
+            color: var(--color-secundary);
+            font-size: 0.9375rem;
+            line-height: 1.5625rem;
+        }
+    }
+}
+
+@media screen and (width >=768px) {
+    .tech {
+        padding-top: 10.1875rem;
+
+        &__carousel {
+            height: 100vw;
+        }
+
+        &__heading {
+            justify-content: left;
+            padding-left: 2.4063rem;
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+            letter-spacing: 0.2109rem;
+        }
+
+        .card {
+            &__figure {
+                height: 19.375rem;
+                display: flex;
+                overflow: hidden;
+            }
+
+            &__content {
+                padding: 3.5rem 9.6875rem;
+            }
+
+            &__nav {
+                margin-bottom: 2.75rem;
+
+                &-item {
+                    width: 3.75rem;
+                    aspect-ratio: 1/1;
+                    height: 3.75rem;
+                    font-size: 1.5rem;
+                    line-height: 1.75rem;
+                    text-align: center;
+                    letter-spacing: 0.0938rem;
+                }
+            }
+
+            &__title {
+                font-size: 1rem;
+                line-height: 1.1875rem;
+                letter-spacing: 0.1688rem;
+                padding-bottom: 1rem;
+            }
+
+            &__name {
+                font-size: 2.5rem;
+                line-height: 2.875rem;
+                padding-bottom: 1.125rem;
+            }
+
+            &__description {
+                font-size: 1rem;
+                line-height: 1.75rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (width >=1024px) {
+    .tech {
+        padding-top: 13.25rem;
+        padding-left: 11.5vw;
+
+        &__heading {
+            padding-bottom: 1.625rem;
+            font-size: 1.75rem;
+            line-height: 2.125rem;
+            letter-spacing: .2953rem;
+        }
+
+        &__carousel {
+            height: 40vw;
+            overflow: hidden;
+        }
+
+        .card {
+            display: grid;
+            grid-template-columns: 1fr 44.79vw;
+
+            &__figure {
+                grid-area: 1/2;
+                width: 35.8vw;
+                margin: auto;
+                margin-right: 0;
+                height: 36.6vw;
+            }
+
+            &__content {
+                padding: 0;
+                display: grid;
+                grid-template-columns: 11.2vw 1fr;
+                text-align: left;
+            }
+
+            &__title {
+                padding-bottom: .6875rem;
+            }
+
+            &__name {
+                text-align: left;
+                font-size: 3.5rem;
+                line-height: 4rem;
+                padding-bottom: 1.0625rem;
+
+            }
+
+            &__description {
+                font-size: 1.125rem;
+                line-height: 2rem;
+            }
+
+            &__nav {
+                flex-direction: column;
+                width: max-content;
+                margin: auto 0;
+
+                &-item {
+                    width: 5.6vw;
+                    height: 5.6vw;
+                    font-size: 2rem;
+                    line-height: 2.3125rem;
+                    letter-spacing: .125rem;
+                }
+            }
+        }
+
+
+    }
+}

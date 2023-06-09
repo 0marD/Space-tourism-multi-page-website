@@ -1,0 +1,31 @@
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    
+    &__menu-toggle {
+        @include menu-burger;
+    }
+
+    &__logo {
+        width: 2.5rem;
+    }
+
+    @media screen and (width >=768px) {
+       padding: 0;
+       padding-left: 2.4375rem;
+    }
+    @media screen and (width >=1024px) {
+        padding-top: 2.5rem;
+        padding-left: 3.4375rem;
+        &__logo{
+            width: 3rem;
+        }
+    }
+}
