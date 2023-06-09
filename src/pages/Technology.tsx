@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import bgMobile from "../assets/technology/background-technology-mobile.jpg";
-import bgTablet from "../assets/technology/background-technology-tablet.jpg";
-import bgDesk from "../assets/technology/background-technology-tablet.jpg";
+import bgMobile from "../../public/assets/technology/background-technology-mobile.jpg";
+import bgTablet from "../../public/assets/technology/background-technology-tablet.jpg";
+import bgDesk from "../../public/assets/technology/background-technology-tablet.jpg";
 import data from "../data/data.json";
 
 const dataTech = data.technology;

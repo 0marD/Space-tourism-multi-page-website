@@ -1,5 +1,5 @@
 import { basicsProps } from '../models/basicsProps'
-import logo from '../assets/shared/logo.svg'
+import logo from '../../public/assets/shared/logo.svg'
 
 const Header = ({ children }: basicsProps): JSX.Element => {
 

@@ -1,6 +1,6 @@
-import bgMobile from "../assets/home/background-home-mobile.jpg";
-import bgTablet from "../assets/home/background-home-tablet.jpg";
-import bgDesk from "../assets/home/background-home-desktop.jpg";
+import bgMobile from "../../public/assets/home/background-home-mobile.jpg";
+import bgTablet from "../../public/assets/home/background-home-tablet.jpg";
+import bgDesk from "../../public/assets/home/background-home-desktop.jpg";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 

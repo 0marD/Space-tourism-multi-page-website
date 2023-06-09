@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import bgMobile from "../assets/crew/background-crew-mobile.jpg";
-import bgTablet from "../assets/crew/background-crew-tablet.jpg";
-import bgDesk from "../assets/crew/background-crew-desktop.jpg";
+import bgMobile from "../../public/assets/crew/background-crew-mobile.jpg";
+import bgTablet from "../../public/assets/crew/background-crew-tablet.jpg";
+import bgDesk from "../../public/assets/crew/background-crew-desktop.jpg";
 import data from "../data/data.json";
 
 const dataCrew = data.crew;
